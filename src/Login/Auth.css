@@ -1,0 +1,44 @@
+/* Full-page center wrapper */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  background: #0f172a; /* optional dark background */
+}
+
+/* Login/Register card */
+.auth-container {
+  width: 350px;
+  padding: 30px;
+  background: #1e293b;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container input,
+.auth-container select {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.auth-container button {
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-container a {
+  color: #38bdf8;
+  text-decoration: none;
+}
