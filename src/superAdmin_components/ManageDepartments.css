@@ -1,0 +1,68 @@
+.manage-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.department-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.department-form input,
+.department-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.department-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: gray;
+}
+
+.department-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.department-table th,
+.department-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.edit-btn {
+  background-color: orange;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: red;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}

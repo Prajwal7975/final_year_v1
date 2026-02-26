@@ -21,7 +21,9 @@ function SuperAdminDashboard() {
             <p>Create and manage department administrators</p>
           </div>
 
-          <div className="dashboard-card">
+          <div className="dashboard-card"
+            onClick={() => navigate("/super-admin/manage-departments")}
+          >
             <h3>Manage Departments</h3>
             <p>Add, update or remove departments</p>
           </div>

@@ -6,6 +6,7 @@ import ProtectedRoute from "./Login/ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard"; // ✅ REQUIRED
 import SuperAdminDashboard from "./pages/SuperAdmin_Dashboard"; // ✅ ADD THIS
 import RegisterAdmin from "./Login/Register"; // ✅ ADD THIS
+import ManageDepartments from "./superAdmin_components/ManageDepartments"; // ✅ ADD THIS
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/super-admin/manage-departments" element={<ManageDepartments />} />
+
       </Routes>
     </BrowserRouter>
   );
