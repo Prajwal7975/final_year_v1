@@ -22,7 +22,7 @@ function AdminDashboard() {
     const fetchComplaints = async () => {
       try {
         const res = await fetch(
-          `https://cwmhpuwvsf.execute-api.eu-north-1.amazonaws.com/api/admin/${department}/complaints`,
+          `https://76pd12y747.execute-api.ap-south-1.amazonaws.com/api/admin/${department}/complaints`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

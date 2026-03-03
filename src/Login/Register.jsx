@@ -16,17 +16,18 @@ function RegisterAdmin() {
     });
   };
 
+  const token = localStorage.getItem("token");
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await fetch(
-        "https://fu1ep6kw0i.execute-api.eu-north-1.amazonaws.com/api/super-admin/register-admin",
+        "https://76pd12y747.execute-api.ap-south-1.amazonaws.com/api/super-admin/register-admin",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + token,
           },
           body: JSON.stringify(formData),
         },
