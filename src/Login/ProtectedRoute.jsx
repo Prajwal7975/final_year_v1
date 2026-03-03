@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -10,7 +11,26 @@ function ProtectedRoute({ children }) {
     return <Navigate to="/login" replace />;
   }
 
-  // If Department Admin → department must exist
+  try {
+    const decoded = jwtDecode(token);
+    const exp = decoded?.exp;
+
+    if (!exp) {
+      localStorage.clear();
+      return <Navigate to="/login" replace />;
+    }
+
+    const currentTime = Date.now() / 1000;
+
+    if (decoded.exp < currentTime) {
+      localStorage.clear();
+      return <Navigate to="/login" replace />;
+    }
+  } catch {
+    localStorage.clear();
+    return <Navigate to="/login" replace />;
+  }
+
   if (role.toUpperCase() === "DEPARTMENT_ADMIN" && !department) {
     localStorage.clear();
     return <Navigate to="/login" replace />;

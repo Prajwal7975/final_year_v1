@@ -20,7 +20,7 @@ function Login() {
       setLoading(true);
 
       const res = await axios.post(
-        "https://fu1ep6kw0i.execute-api.eu-north-1.amazonaws.com/login",
+        "https://76pd12y747.execute-api.ap-south-1.amazonaws.com/login",
         { email: email.trim(), password: password.trim() },
         {
           headers: {
