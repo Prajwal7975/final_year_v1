@@ -1,0 +1,151 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 20px 25px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  background: #f4f6f9;
+  color: #1e293b;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 25px;
+}
+
+.complaint-info {
+  background: #f8f9fb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #1976d2;
+}
+
+.complaint-info p {
+  margin: 8px 0;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.complaint-info strong {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Form Group */
+.form-group {
+  margin: 20px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.department-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.department-select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 20px 25px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn,
+.reassign-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.cancel-btn {
+  background-color: #f1f3f6;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e3e8;
+}
+
+.reassign-btn {
+  background-color: #1976d2;
+  color: white;
+}
+
+.reassign-btn:hover {
+  background-color: #1565c0;
+}
