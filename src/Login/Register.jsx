@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function RegisterAdmin() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,13 +31,14 @@ function RegisterAdmin() {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
           },
-        }
+        },
       );
 
       const data = await response.json();
 
       if (response.ok) {
-        const admins = typeof data.body === "string" ? JSON.parse(data.body) : data;
+        const admins =
+          typeof data.body === "string" ? JSON.parse(data.body) : data;
         const filtered = admins.filter((admin) => admin.role !== "SUPER_ADMIN");
         setAdminsList(filtered);
       } else {
@@ -76,7 +79,7 @@ function RegisterAdmin() {
             Authorization: "Bearer " + token,
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       const data = await response.json();
@@ -102,11 +105,37 @@ function RegisterAdmin() {
   };
 
   return (
-    <div style={{ padding: "40px", backgroundColor: "#f4f6f9", minHeight: "100vh" }}>
-      
+        <>
+      <div className="sr-topbar">
+        <button
+          className="sr-back-btn"
+          onClick={() => navigate("/super-admin")}
+        >
+          ← Back to Dashboard
+        </button>
+      </div>
+
+    <div
+      style={{
+        padding: "40px",
+        backgroundColor: "#f4f6f9",
+        minHeight: "100vh",
+      }}
+    >
       {/* Register Form */}
-      <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", maxWidth: "500px", marginBottom: "30px", boxShadow: "0 4px 10px rgba(0,0,0,0.08)" }}>
-        <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>Register Department Admin</h2>
+      <div
+        style={{
+          backgroundColor: "white",
+          padding: "30px",
+          borderRadius: "12px",
+          maxWidth: "500px",
+          marginBottom: "30px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        }}
+      >
+        <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>
+          Register Department Admin
+        </h2>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -167,8 +196,17 @@ function RegisterAdmin() {
       </div>
 
       {/* Admins Table */}
-      <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.08)" }}>
-        <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>Registered Admins</h2>
+      <div
+        style={{
+          backgroundColor: "white",
+          padding: "30px",
+          borderRadius: "12px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        }}
+      >
+        <h2 style={{ marginBottom: "20px", color: "#1e293b" }}>
+          Registered Admins
+        </h2>
 
         {loading ? (
           <p>Loading admins...</p>
@@ -200,7 +238,10 @@ function RegisterAdmin() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="5" style={{ textAlign: "center", padding: "20px" }}>
+                    <td
+                      colSpan="5"
+                      style={{ textAlign: "center", padding: "20px" }}
+                    >
                       No admins registered yet
                     </td>
                   </tr>
@@ -210,8 +251,8 @@ function RegisterAdmin() {
           </div>
         )}
       </div>
-
     </div>
+        </>
   );
 }
 
@@ -253,5 +294,7 @@ const tdStyle = {
   padding: "14px",
   borderBottom: "1px solid #eee",
 };
+
+tdStyle.color = "#1e293b";
 
 export default RegisterAdmin;

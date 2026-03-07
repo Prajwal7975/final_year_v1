@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import IncidentsFilterView from "./pages/IncidentsFilterView";
 
 import Login from "./Login/login";
 import ProtectedRoute from "./Login/ProtectedRoute";
@@ -18,7 +19,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
+        {/* Incidents Filter - Super Admin */}
+        <Route
+        path="/super-admin/incidents"
+  element={
+    <ProtectedRoute>
+      <IncidentsFilterView />
+    </ProtectedRoute>
+  }
+  />
         {/* Default route */}
         <Route path="/" element={<Navigate to="/login" />} />
 
@@ -54,6 +63,15 @@ function App() {
               <ManageDepartments />
             </ProtectedRoute>
           }
+        />
+        {/* Incidents Filter */}
+        <Route
+        path="/super-admin/incidents"
+        element={
+        <ProtectedRoute>
+          <IncidentsFilterView />
+          </ProtectedRoute>
+        }
         />
 
         {/* Analytics */}

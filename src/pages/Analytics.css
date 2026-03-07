@@ -1,4 +1,3 @@
-/* Analytics Container - matches your super-admin-container */
 .analytics-container {
   padding: 40px;
   background-color: #f4f6f9;
@@ -19,54 +18,48 @@
   color: #1e293b;
 }
 
-/* Statistics Section */
+/* Stats Section */
+
 .statistics-section {
   margin-bottom: 40px;
 }
 
-/* Stats Grid - matches your dashboard-grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  margin-bottom: 40px;
 }
 
-/* Stat Card - matches your dashboard-card style */
 .stat-card {
   background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.stat-card.total {
+  border-left: 5px solid #1976d2;
 }
-
-/* Border colors for different card types */
-.stat-card.total { border-left: 5px solid #1976d2; }
-.stat-card.pending { border-left: 5px solid #f39c12; }
-.stat-card.progress { border-left: 5px solid #9b59b6; }
-.stat-card.resolved { border-left: 5px solid #27ae60; }
+.stat-card.pending {
+  border-left: 5px solid #f39c12;
+}
+.stat-card.progress {
+  border-left: 5px solid #9b59b6;
+}
+.stat-card.resolved {
+  border-left: 5px solid #27ae60;
+}
 
 .stat-icon {
-  font-size: 48px;
-}
-
-.stat-content {
-  flex: 1;
+  font-size: 40px;
 }
 
 .stat-number {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
-  margin-bottom: 5px;
   color: #1e293b;
 }
 
@@ -75,21 +68,20 @@
   color: #64748b;
 }
 
-/* Table Section */
+/* Table */
+
 .table-section {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
-/* Table Container - matches your department-card */
 .table-container {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
 }
 
-/* Table - matches your department-table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -100,29 +92,22 @@ thead {
 }
 
 th {
-  padding: 14px;
+  padding: 12px;
   text-align: left;
-  font-weight: 600;
   border-bottom: 2px solid #ddd;
-  color: #1e293b;
 }
 
 td {
-  padding: 14px;
+  padding: 12px;
   border-bottom: 1px solid #eee;
-  color: #1e293b;
 }
 
 tbody tr:hover {
   background-color: #f8f9fb;
 }
 
-.dept-name,
-.area-name {
-  font-weight: 500;
-}
+/* Status Colors */
 
-/* Colored cells */
 .pending-cell {
   color: #f39c12;
   font-weight: 600;
@@ -138,55 +123,52 @@ tbody tr:hover {
   font-weight: 600;
 }
 
-/* Completion Bar */
-.completion-bar {
-  width: 100px;
-  height: 8px;
-  background: #e0e3e8;
-  border-radius: 4px;
-  overflow: hidden;
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.completion-fill {
-  height: 100%;
-  background: #1976d2;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.completion-text {
-  font-size: 13px;
-  color: #64748b;
-  font-weight: 600;
-}
-
 /* Responsive */
+
 @media (max-width: 768px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
-
-  table {
-    min-width: 600px;
-  }
 }
 
-/* Reassign Button */
-.reassign-btn-small {
-  padding: 8px 16px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.dept-name {
   font-weight: 500;
-  transition: 0.2s ease-in-out;
+  color: #1e293b;
 }
 
-.reassign-btn-small:hover {
-  background-color: #1565c0;
+thead th {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.total-no {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: medium;
+}
+
+.sr-topbar {
+  background: white;
+  padding: 14px 40px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sr-back-btn {
+  background: none;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sr-back-btn:hover {
+  background: #f1f5f9;
 }
