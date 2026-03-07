@@ -46,15 +46,14 @@ function SuperAdminDashboard() {
             <h3>Manage Users</h3>
             <p>View and manage citizen accounts</p>
           </div>
-
           <div
-            className="dashboard-card"
-            onClick={() => navigate("/system-reports")}
-            style={{ cursor: "pointer" }}
+          className="dashboard-card"
+          onClick={() => navigate("/super-admin/incidents")}
+          style={{ cursor: "pointer" }}
           >
-            <h3>System Reports</h3>
-            <p>Department performance and statistics</p>
-          </div>
+            <h3>📋 View Complaints</h3>
+            <p>Filter and view all citizen complaints</p>
+            </div>
         </div>
       </div>
     </>
