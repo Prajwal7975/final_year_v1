@@ -1,8 +1,9 @@
-function Header({ department }) {
+function Header({ department, toggleSidebar }) {
   const logout = () => {
     localStorage.clear();
     window.location.href = "/login";
   };
+
   return (
     <div
       style={{
@@ -15,7 +16,24 @@ function Header({ department }) {
         boxSizing: "border-box",
       }}
     >
-      {/* LEFT */}
+      {/* ☰ Toggle INSIDE header */}
+      <button
+        onClick={toggleSidebar}
+        style={{
+          fontSize: "20px",
+          marginRight: "15px",
+          padding: "6px 10px",
+          background: "#334155",
+          color: "white",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+        }}
+      >
+        ☰
+      </button>
+
+      {/* TITLE */}
       <h2 style={{ margin: 0 }}>
         {department ? `Admin Panel – ${department}` : "Super Admin Panel"}
       </h2>

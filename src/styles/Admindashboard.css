@@ -1,28 +1,24 @@
+/* ===== Layout ===== */
 .dashboard-container {
   display: flex;
   height: 100vh;
-  background-color: #f8fafc;
+  background: #0f172a;
+  color: #e2e8f0; /* better readable text */
 }
 
 .main-content {
   flex: 1;
-  padding: 25px;
+  padding: 24px;
   overflow-y: auto;
 }
 
-/* table card */
-.complaints-card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
+/* ===== Sidebar ===== */
 .sidebar {
-  width: 230px;
-  background: #1e293b;
-  color: white;
+  width: 240px;
+  background: #020617;
+  color: #cbd5f5;
   padding: 20px;
+  border-right: 1px solid #1e293b;
 }
 
 .sidebar h3 {
@@ -31,39 +27,151 @@
   font-weight: 600;
 }
 
+/* Sidebar buttons */
 .sidebar button {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
   border: none;
-  border-radius: 6px;
-  background: #334155;
-  color: white;
+  border-radius: 8px;
+  background: transparent;
+  color: #93c5fd;
   cursor: pointer;
-  font-size: 14px;
-  transition: 0.2s;
+  text-align: left;
+  transition: all 0.2s ease;
 }
 
 .sidebar button:hover {
-  background: #3b82f6;
+  background: #1e293b;
+  color: #3b82f6;
 }
 
+/* Active sidebar item (optional) */
+.sidebar button.active {
+  background: #1e293b;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* ===== Cards ===== */
+.complaints-card,
+.section-card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  margin-bottom: 20px;
+}
+
+/* ===== Table ===== */
 table {
   width: 100%;
   border-collapse: collapse;
+  user-select: none;
 }
 
 th {
   text-align: left;
-  background: #f1f5f9;
+  background: #1e293b;
   padding: 12px;
+  font-weight: 600;
+  color: #93c5fd;
 }
 
 td {
   padding: 12px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #1e293b;
+  transition: background 0.2s ease;
+  color: #e2e8f0;
 }
 
-tr:hover {
-  background-color: #f8fafc;
+/* Hover */
+tr:hover td {
+  background-color: #1e293b;
+}
+
+/* Selected row */
+tr.selected-row td {
+  background-color: #1e293b;
+  border-left: 4px solid #3b82f6;
+}
+
+/* ===== Form Elements ===== */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e2e8f0;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ===== Status ===== */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.pending {
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+}
+
+.status.in_progress {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+}
+
+.status.resolved {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* ===== Misc ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
